@@ -108,3 +108,15 @@ console.log(link.getAttribute("href"));
 //*     Data attributes
 
 console.log(logo.dataset.versionNumber);
+
+//*     Scroll to section
+
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+
+btnScrollTo.addEventListener("click", function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);          // DOMRect {x: 0, y: 0, width: 1168, height: 1000, top: 0, …}
+  console.log(e.target.getBoundingClientRect());   // Show the coordonate in page 
+  console.log('current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+});
