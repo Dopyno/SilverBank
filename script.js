@@ -168,13 +168,16 @@ const randomColor = () =>
 console.log(randomColor());
 
 document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor()
+  //this.style.backgroundColor = randomColor()
+
+  // Stop propagation 
+  e.stopPropagation();
 });
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
+  //this.style.backgroundColor = randomColor();
 });
 
 document.querySelector('.nav').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-});
+  //this.style.backgroundColor = randomColor();
+}, true);
