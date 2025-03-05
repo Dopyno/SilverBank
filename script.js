@@ -1,31 +1,31 @@
-"use strict";
+'use strict';
 
 ///////////////////////////////////////
 // Modal window
 
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".btn--close-modal");
-const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
 const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 };
 
 const closeModal = function (e) {
   e.preventDefault();
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
 };
 
-btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
+btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
 
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
   }
 });
@@ -37,22 +37,22 @@ document.addEventListener("keydown", function (e) {
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
-const header = document.querySelector(".header");
-const allSection = document.querySelectorAll(".section");
+const header = document.querySelector('.header');
+const allSection = document.querySelectorAll('.section');
 console.log(allSection);
 
-document.getElementById("section--1");
-const allButtons = document.getElementsByTagName("button");
+document.getElementById('section--1');
+const allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
 
-console.log(document.getElementsByClassName("btn"));
+console.log(document.getElementsByClassName('btn'));
 
 //*  Creating and inserting elements
 
 // .insertAdjacentHTML
 
-const message = document.createElement("div");
-message.classList.add("cookie-message");
+const message = document.createElement('div');
+message.classList.add('cookie-message');
 // message.textContent = 'We use cookies for improved functionality and analytics.';
 message.innerHTML =
   'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
@@ -66,44 +66,44 @@ header.prepend(message); // 1st child - insert an element as the first child in 
 
 //* Delete elements
 document
-  .querySelector(".btn--close-cookie")
-  .addEventListener("click", function () {
+  .querySelector('.btn--close-cookie')
+  .addEventListener('click', function () {
     message.remove();
   });
 
 /////////////////////////////////////////////////////////////////////////
 //*     Styles
 
-message.style.backgroundColor = "#37383d";
-message.style.width = "120%";
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
 console.log(message.style.backgroundColor);
 
 console.log(getComputedStyle(message).color);
 console.log(getComputedStyle(message).height);
 
 message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
-document.documentElement.style.setProperty("--color-primary", "orangered");
+document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 //*     Attributes
 
-const logo = document.querySelector(".nav__logo");
+const logo = document.querySelector('.nav__logo');
 console.log(logo.alt);
 console.log(logo.src);
-console.log(logo.getAttribute("src"));
+console.log(logo.getAttribute('src'));
 console.log(logo.className);
 
-logo.alt = "Beautiful minimalist logo";
+logo.alt = 'Beautiful minimalist logo';
 
 // Non-standard
 console.log(logo.designer);
-console.log(logo.getAttribute("designer"));
-logo.setAttribute("company", "Bankist");
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'Bankist');
 
-const link = document.querySelector(".twitter-link");
+const link = document.querySelector('.twitter-link');
 console.log(link.href);
-console.log(link.getAttribute("href"));
+console.log(link.getAttribute('href'));
 
 //*     Data attributes
 
@@ -111,17 +111,17 @@ console.log(logo.dataset.versionNumber);
 
 //*     Scroll to section
 
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-const section1 = document.querySelector("#section--1");
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
-btnScrollTo.addEventListener("click", function (e) {
+btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
   console.log(s1coords); // DOMRect {x: 0, y: 0, width: 1168, height: 1000, top: 0, …}
   console.log(e.target.getBoundingClientRect()); // Show the coordonate in page
-  console.log("current scroll (X/Y)", window.pageXOffset, window.pageYOffset);
+  console.log('current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
 
   console.log(
-    "height/width viewport",
+    'height/width viewport',
     document.documentElement.clientHeight,
     document.documentElement.clientWidth
   );
@@ -138,5 +138,13 @@ btnScrollTo.addEventListener("click", function (e) {
   //   behavior: "smooth",
   // })
 
-  section1.scrollIntoView({behavior: 'smooth'})
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+//*    Event Listener
+
+const h1 = document.querySelector('h1');
+
+h1.addEventListener('mouseenter', function (e) {
+  alert('addEventListener: Great! You are reading the heading :D');
 });
