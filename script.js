@@ -86,22 +86,38 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+//?  ============  Tabbed component  =============
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operation__content');
+
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+
+  if (!clicked) return;
+
+  //Active tab
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+});
+
 ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////
 
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
 const header = document.querySelector('.header');
 const allSection = document.querySelectorAll('.section');
-console.log(allSection);
+//console.log(allSection);
 
 document.getElementById('section--1');
 const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
+//console.log(allButtons);
 
-console.log(document.getElementsByClassName('btn'));
+//console.log(document.getElementsByClassName('btn'));
 
 //*  Creating and inserting elements
 
@@ -140,6 +156,29 @@ const alertH1 = function (e) {
 h1.addEventListener('mouseenter', alertH1);
 
 setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 4000);
+
+// // going downwards: child
+// console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.childNodes );
+// console.log(h1.children );
+// console.log();
+// h1.firstElementChild.style.color = 'white'
+// h1.firstElementChild.style.color = 'orange'
+
+// //Going upwards
+// console.log(h1.parentElement);
+// console.log(h1.parentNode);
+
+// h1.closest('h1').style.background = 'var(--gradient-primary)'
+// h1.closest('header').style.background = 'var(--gradient-secondary)'
+
+// // Going sideway: siblings
+// console.log(h1.previousSibling);
+// console.log(h1.nextElementSibling);
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
+
+// console.log(h1.parentElement.children);
 
 /////////////////////////////////////////////////////////////////////////
 //*     Styles
