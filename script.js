@@ -134,6 +134,11 @@ const handleOver = function(e){
 nav.addEventListener('mouseover', handleOver.bind(0.5))
 
 nav.addEventListener('mouseout', handleOver.bind(1));
+
+//?   ======= Sticky navigation ==========
+window.addEventListener('scroll', function(e){
+  console.log(this.window.screenY);
+})
 ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////
