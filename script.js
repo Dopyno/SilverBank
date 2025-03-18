@@ -16,7 +16,7 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
-const nav = document.querySelector('.nav')
+const nav = document.querySelector('.nav');
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -94,8 +94,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 //?  ============  Tabbed component  =============
 
-
-
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
 
@@ -116,7 +114,7 @@ tabsContainer.addEventListener('click', function (e) {
 
 //? ======== Menu fade animation ==============
 
-const handleOver = function(e){
+const handleOver = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
@@ -127,18 +125,25 @@ const handleOver = function(e){
     });
     //logo.style.opacity = this;
   }
-}
+};
 
 //Passing an "argument" into handler
 //Bind return another function  similar with function(e){handleOver(e , 0.5)}
-nav.addEventListener('mouseover', handleOver.bind(0.5))
+nav.addEventListener('mouseover', handleOver.bind(0.5));
 
 nav.addEventListener('mouseout', handleOver.bind(1));
 
 //?   ======= Sticky navigation ==========
-window.addEventListener('scroll', function(e){
-  console.log(this.window.screenY);
-})
+
+const initialCoords = section1.getBoundingClientRect();
+console.log();
+initialCoords;
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+
+  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+});
 ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////
