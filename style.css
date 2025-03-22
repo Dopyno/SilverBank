@@ -30,7 +30,10 @@ body {
   font-weight: 300;
   color: #444;
   line-height: 1.9;
-  background-color: #f3f3f3;
+  /* background-color: turquoise; */
+  /* background-color: #f3f3f3; */
+  /* background-color: #e1d5f4; */
+  background-color: #eef1f5;
 }
 
 /* GENERAL ELEMENTS */
@@ -122,6 +125,7 @@ img {
   width: 100%;
   padding: 0 6rem;
   z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 /* nav and stickly class at the same time */
@@ -131,7 +135,8 @@ img {
 }
 
 .nav__logo {
-  height: 4.5rem;
+  height: 7rem;
+  width: 140px;
   transition: all 0.3s;
 }
 
