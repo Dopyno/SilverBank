@@ -448,3 +448,18 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 4000);
 // document.querySelector('.nav').addEventListener('click', function (e) {
 //   //this.style.backgroundColor = randomColor();
 // });
+
+ //?   ========  DOM Event   ========================
+document.addEventListener('DOMContentLoaded', function(e){
+  console.log('HTML parsed and DOM tree built!');
+})
+
+window.addEventListener('load', function(e){
+  console.log('Page fully loaded', e);
+})
+
+// window.addEventListener('beforeunload', function(e){
+//   e.preventDefault()
+//   console.log(e);
+//   e.returnValue = '';
+// })
