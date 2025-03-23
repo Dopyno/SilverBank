@@ -331,7 +331,7 @@ const message = document.createElement('div');
 message.classList.add('cookie-message');
 // message.textContent = 'We use cookies for improved functionality and analytics.';
 message.innerHTML =
-  'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+  'We use cookies for improved functionality and analytics. ...Nah, just joking! 😂👍<button class="btn btn--close-cookie">Got it!</button>';
 
 header.prepend(message); // 1st child - insert an element as the first child in the header element
 // header.append(message); // last child - insert an element as the last child in the header element
@@ -352,7 +352,7 @@ document
 const h1 = document.querySelector('h1');
 
 const alertH1 = function (e) {
-  alert('addEventListener: Great! You are reading the heading :D');
+  alert('Great! You are reading the heading :D 😎\nWelcome to SilverBank, where your money grow safely!💷\nEnjoy!!!👀');
 
   // h1.removeEventListener('mouseenter', alertH1)
 };
